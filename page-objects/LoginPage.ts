@@ -25,4 +25,14 @@ export class LoginPage {
     async visit() {
         await this.page.goto("http://zero.webappsecurity.com/index.html")
     }
+
+    async login(username: string, password: string) {
+        await this.usernameInput.type(username)
+        await this.passwordInput.type(password)
+        await this.submitButton.click()
+    }
+
+    async assertErrorMessage() {
+        await expect(this.errorMessage).toContainText("Login and/or password are wrong. ")
+    }
 }   
