@@ -32,7 +32,6 @@ test.describe.only("Currency exchange form testing", () => {
         const successMessage = page.locator("#alert_content")
         await expect(successMessage).toBeVisible()
         await expect(successMessage).toContainText("Foreign currency cash was successfully purchased.")
-
-
+        
     })
 })
