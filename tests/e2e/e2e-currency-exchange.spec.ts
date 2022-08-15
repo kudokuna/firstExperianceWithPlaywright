@@ -1,12 +1,18 @@
 import {test, expect} from "@playwright/test"
+import { HomePage } from "../../page-objects/HomePage"
+import { LoginPage } from "../../page-objects/LoginPage"
 
 test.describe("Currency exchange form testing", () => {
+    let homePage: HomePage
+    let loginPage: LoginPage
+
     test.beforeEach(async ({page}) => {
-        await page.goto("http://zero.webappsecurity.com/index.html")
-        await page.click("#signin_button")
-        await page.type("#user_login","username")
-        await page.type("#user_password","password")
-        await page.click("input[name=submit]")
+        let homePage = new HomePage(page)
+        let loginPage = new LoginPage(page)
+
+        await homePage.visit()
+        await homePage.clickOnSignIn()
+        await loginPage.login("username", "password")
         await page.goto("http://zero.webappsecurity.com/bank/account-summary.html") // for successful redirect
       })
     
