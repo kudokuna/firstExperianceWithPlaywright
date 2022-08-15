@@ -1,7 +1,7 @@
 import {test, expect} from "@playwright/test"
 import {HomePage} from "../../page-objects/HomePage"
 
-test.describe.parallel.only("Search Result", () => {
+test.describe.parallel("Search Result", () => {
     let homePage: HomePage
     
     test.beforeEach(async ({page}) => { 
