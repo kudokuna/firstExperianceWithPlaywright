@@ -10,9 +10,9 @@ test.describe("Filters cases", () => {
       homePage = new HomePage(page)
       loginPage = new LoginPage(page)
 
-      homePage.visit
-      homePage.clickOnSignIn
-      loginPage.login("username", "password")
+      await homePage.visit()
+      await homePage.clickOnSignIn()
+      await loginPage.login("username", "password")
       await page.goto("http://zero.webappsecurity.com/bank/account-summary.html") // for successful redirect
     })
 

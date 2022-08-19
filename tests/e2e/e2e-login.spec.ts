@@ -19,7 +19,10 @@ test.describe.parallel("Login / Logut flow", () => {
         
         await homePage.clickOnSignIn()
         await loginPage.login("invalid username", "invalid password")
-        await loginPage.assertErrorMessage()
+
+        const errorMessage = page.locator(".alert-error")
+        await expect(errorMessage).toContainText("Login and/or password are wrong. ")
+
     })
 
     // Positive + logout

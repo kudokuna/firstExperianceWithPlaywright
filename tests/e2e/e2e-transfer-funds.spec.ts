@@ -10,6 +10,9 @@ test.describe("Transfer funds and make payments", () => {
     test.beforeEach(async ({ page }) => {
         homePage = new HomePage(page)
         loginPage = new LoginPage(page)
+        await homePage.visit()
+        await homePage.clickOnSignIn()
+        await loginPage.login("username","password")
         await page.goto("http://zero.webappsecurity.com/bank/account-summary.html")    
 
     })
