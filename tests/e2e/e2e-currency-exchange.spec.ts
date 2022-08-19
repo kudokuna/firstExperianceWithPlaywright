@@ -13,7 +13,7 @@ test.describe("Currency exchange form testing", () => {
         await homePage.visit()
         await homePage.clickOnSignIn()
         await loginPage.login("username", "password")
-        await page.goto("http://zero.webappsecurity.com/bank/account-summary.html") // for successful redirect
+        await page.goto("http://zero.webappsecurity.com/bank/account-summary.html") // for successful redirecti
       })
     
     test("Currency exchange", async ({ page }) => {
