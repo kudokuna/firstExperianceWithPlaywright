@@ -1,4 +1,4 @@
-import { expect, Locator, Page } from "@playwright/test"
+import { Locator, Page } from "@playwright/test"
 
 export class HomePage {
     readonly page: Page
@@ -14,7 +14,7 @@ export class HomePage {
     }
 
     async visit() {
-        await this.page.goto("http://zero.webappsecurity.com")
+        await this.page.goto("http://zero.webappsecurity.com/index.html")
     }
 
     async clickOnFeedbackLink() {
