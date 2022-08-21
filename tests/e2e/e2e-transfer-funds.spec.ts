@@ -1,6 +1,6 @@
-import {test, expect} from "@playwright/test"
-import {HomePage} from "../../page-objects/HomePage"
-import {LoginPage} from "../../page-objects/LoginPage" 
+import { test, expect } from "@playwright/test"
+import { HomePage } from "../../page-objects/HomePage"
+import { LoginPage } from "../../page-objects/LoginPage" 
 import { Navbar } from "../../page-objects/components/Navbar"
 import { TransferFundsPage } from "../../page-objects/TransferFunds"
 
