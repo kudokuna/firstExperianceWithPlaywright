@@ -7,7 +7,13 @@
     "tests:chrome": "playwright test --config=playwright.config.ts --project=Chromium",
     "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
     "tests:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
-    "tests:e2e": "playwright test --config=e2e.config.ts --project=Chromium"
+    "tests:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
+    "tests:visual": "playwright test --config=visual.config.ts --project=Chromium",
+    "tests:sause": "playwright test --config=sause.config.ts --project=Chromium --project=Firefox --project=Webkit",
+    "tests:sause-chromium": "playwright test --config=sause.config.ts --project=Chromium",
+    "tests:sause-firefox": "playwright test --config=sause.config.ts --project=Firefox",
+    "tests:sause-webkit": "playwright test --config=sause.config.ts --project=Webkit"
+
   },
   "author": "DK",
   "license": "ISC",
