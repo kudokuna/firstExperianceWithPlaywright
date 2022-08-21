@@ -1,8 +1,8 @@
-import {test, expect} from "@playwright/test"
+import { test, expect } from "@playwright/test"
 import { HomePage } from "../../page-objects/HomePage"
 import { LoginPage } from "../../page-objects/LoginPage"
-import {Navbar} from "../../page-objects/components/Navbar"
-import {PaymentPage} from "../../page-objects/PaymentPage"
+import { Navbar } from "../../page-objects/components/Navbar"
+import { PaymentPage } from "../../page-objects/PaymentPage"
 
 test.describe("New paument", () => {
   let loginPage: LoginPage

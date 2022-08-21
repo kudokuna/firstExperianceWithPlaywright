@@ -30,6 +30,7 @@ test.describe.parallel("Login / Logut flow", () => {
         
         await homePage.clickOnSignIn()
         await loginPage.login("username", "password")
+        await loginPage.wait(2000)
         await page.goto("http://zero.webappsecurity.com/bank/account-summary.html")
 
         const accountSummary = await page.locator("#account_summary_tab")

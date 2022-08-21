@@ -1,5 +1,5 @@
-import {test, expect} from "@playwright/test"
-import {HomePage} from "../../page-objects/HomePage"
+import { test, expect } from "@playwright/test"
+import { HomePage } from "../../page-objects/HomePage"
 
 test.describe.parallel("Search Result", () => {
     let homePage: HomePage
