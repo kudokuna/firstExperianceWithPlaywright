@@ -21,7 +21,7 @@ test.describe("Login flow", () => {
         await loginPage.login("standard_user","secret_sauce")
 
         const productsTitle = page.locator(".title")
-        await expect(productsTitle).toContainText("Products") // TODO: import it from Inventory PageObject
+        await expect(productsTitle).toContainText("Products") 
     })
 
     test("Locked user error login", async ({ page }) => {
@@ -36,6 +36,11 @@ test.describe("Login flow", () => {
 
         const problemItemimage = page.locator("#item_4_img_link > img")
         expect(problemItemimage).toHaveAttribute("src","/static/media/sl-404.168b1cce.jpg")
+    })
+
+    test("Logout flow checking", async ({ page }) => {
+        await loginPage.logout()
+        await expect(loginPage.submitButton).toBeVisible()
     })
 })
 
