@@ -9,6 +9,8 @@ export class InventoryPage {
     readonly aboutBurgerLink: Locator
     readonly resetStateBurgerLink: Locator
     readonly crossBurgerBtn: Locator
+    readonly inventaryList: Locator
+    readonly itemElement: Locator
 
 
     // Initialize selector using constructor
@@ -22,6 +24,8 @@ export class InventoryPage {
         this.aboutBurgerLink = page.locator("#about_sidebar_link")
         this.resetStateBurgerLink = page.locator("#reset_sidebar_link")
         this.crossBurgerBtn = page.locator("#react-burger-cross-btn")
+        this.inventaryList = page.locator(".inventory_list > div")
+        this.itemElement = page.locator("#item_4_img_link")
     }
 
     // Define page methods
@@ -32,5 +36,9 @@ export class InventoryPage {
     
     async closeTheSlider() {
         await this.crossBurgerBtn.click()
+    }
+
+    async openProductDetails() {
+        await this.itemElement.click()
     }
 }   

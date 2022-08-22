@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test"
 import { LoginPage } from "../../sause-page-objects/LoginPage"
 import { InventoryPage } from "../../sause-page-objects/InventoryPage"
 
-test.describe.only("Inventory page test cases", () => {
+test.describe("Inventory page test cases", () => {
     let loginPage: LoginPage
     let inventoryPage: InventoryPage
 
@@ -16,6 +16,7 @@ test.describe.only("Inventory page test cases", () => {
 
     test("Open slider via burger button and validate elements", async ({ page }) => {
         await inventoryPage.tapToBurger()
+        
         expect(inventoryPage.sliderMenu).toBeVisible()
         expect(inventoryPage.allItemsBurgerLink).toBeVisible()
         expect(inventoryPage.aboutBurgerLink).toBeVisible()
@@ -26,6 +27,18 @@ test.describe.only("Inventory page test cases", () => {
     test("Close slider and validate elements absence", async ({ page }) => {
         await inventoryPage.tapToBurger() 
         await inventoryPage.closeTheSlider()
+        
         await expect(inventoryPage.sliderMenu).toBeHidden()
     })
+
+    test("Calculacte products amount on page", async ({ page }) => {
+        expect(inventoryPage.inventaryList).toHaveCount(6)
+    })
+
+    test("Transfer to item_details page", async ({ page }) => {
+        await inventoryPage.openProductDetails()
+
+        expect (page).toHaveURL("https://www.saucedemo.com/inventory-item.html?id=4")
+    })
+
 })
