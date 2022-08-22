@@ -1,16 +1,16 @@
-import { PlaywrightTestConfig } from '@playwright/test'
+import { firefox, PlaywrightTestConfig } from '@playwright/test'
 
 const config: PlaywrightTestConfig = {
     timeout: 60000,
     retries: 0,
-    testDir: "tests/e2e",
+    testDir: "tests/visual",
     use: {
         headless: true,
         viewport: {width: 1280, height: 800},
+        actionTimeout: 15000,
         ignoreHTTPSErrors: true,
-        actionTimeout: 10000,
         video: "off",
-        screenshot: "only-on-failure",
+        screenshot: "off",
     },
     projects: [
         {

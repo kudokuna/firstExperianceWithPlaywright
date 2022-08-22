@@ -3,11 +3,10 @@ import { PlaywrightTestConfig } from '@playwright/test'
 const config: PlaywrightTestConfig = {
     timeout: 60000,
     retries: 0,
-    testDir: "tests/e2e",
+    testDir: "tests/sause_demo",
     use: {
         headless: true,
-        viewport: {width: 1280, height: 800},
-        ignoreHTTPSErrors: true,
+        viewport: {width: 1920, height: 1080},
         actionTimeout: 10000,
         video: "off",
         screenshot: "only-on-failure",
