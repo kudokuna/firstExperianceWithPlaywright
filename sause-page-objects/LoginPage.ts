@@ -6,6 +6,8 @@ export class LoginPage extends AbstractPage {
     readonly usernameInput: Locator
     readonly passwordInput: Locator
     readonly submitButton: Locator
+    readonly menuBurgerBtn: Locator
+    readonly logoutLink: Locator
 
     // Initialize selector using constructor
 
@@ -14,6 +16,8 @@ export class LoginPage extends AbstractPage {
         this.usernameInput = page.locator("#user-name")
         this.passwordInput = page.locator("#password")
         this.submitButton = page.locator("#login-button")
+        this.menuBurgerBtn = page.locator("#react-burger-menu-btn")
+        this.logoutLink = page.locator("#logout_sidebar_link")
     }
 
     // Define login page methods
@@ -27,6 +31,13 @@ export class LoginPage extends AbstractPage {
         await this.usernameInput.type(username)
         await this.passwordInput.type(password)
         await this.submitButton.click()
+        await this.wait(1000)
+    }
+
+    async logout() {
+        await this.login('standard_user','secret_sauce')
+        await this.menuBurgerBtn.click()
+        await this.logoutLink.click()     
     }
 
 }   
